@@ -263,26 +263,27 @@ func (s *EtcdV3) WatchTree(directory string, stopCh <-chan struct{}, opts *store
 		rev++
 		watchCh := wc.Watch(context.Background(), s.normalize(directory), etcd.WithPrefix(), etcd.WithRev(rev))
 
-		for resp := range watchCh {
-			// Check if the watch was stopped by the caller
+		for {
 			select {
+			// Check if the watch was stopped by the caller
 			case <-stopCh:
 				return
-			default:
-			}
+			case resp := <-watchCh:
+				list := make([]*store.KVPair, len(resp.Events))
 
-			list := make([]*store.KVPair, len(resp.Events))
-
-			for i, ev := range resp.Events {
-				list[i] = &store.KVPair{
-					Key:       string(ev.Kv.Key),
-					Value:     []byte(ev.Kv.Value),
-					LastIndex: uint64(ev.Kv.ModRevision),
+				for i, ev := range resp.Events {
+					list[i] = &store.KVPair{
+						Key:       string(ev.Kv.Key),
+						Value:     []byte(ev.Kv.Value),
+						LastIndex: uint64(ev.Kv.ModRevision),
+					}
 				}
+
+				respCh <- list
 			}
 
-			respCh <- list
 		}
+
 	}()
 
 	return respCh, nil
