@@ -12,13 +12,13 @@ import (
     "time"
     "log"
 
-    "github.com/docker/libkv"
-    "github.com/docker/libkv/store"
-    "github.com/docker/libkv/store/boltdb"
-    "github.com/docker/libkv/store/consul"
-    "github.com/docker/libkv/store/etcd/v3"
-    "github.com/docker/libkv/store/zookeeper"
-    "github.com/docker/libkv/store/redis"
+    "github.com/huangjunwen/libkv"
+    "github.com/huangjunwen/libkv/store"
+    "github.com/huangjunwen/libkv/store/boltdb"
+    "github.com/huangjunwen/libkv/store/consul"
+    "github.com/huangjunwen/libkv/store/etcd/v3"
+    "github.com/huangjunwen/libkv/store/zookeeper"
+    "github.com/huangjunwen/libkv/store/redis"
 )
 
 func init() {

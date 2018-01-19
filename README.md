@@ -1,9 +1,6 @@
 # libkv
 
-[![GoDoc](https://godoc.org/github.com/docker/libkv?status.png)](https://godoc.org/github.com/abronan/libkv)
-[![Build Status](https://travis-ci.org/docker/libkv.svg?branch=master)](https://travis-ci.org/abronan/libkv)
-[![Coverage Status](https://coveralls.io/repos/docker/libkv/badge.svg)](https://coveralls.io/r/abronan/libkv)
-[![Go Report Card](https://goreportcard.com/badge/github.com/abronan/libkv)](https://goreportcard.com/report/github.com/abronan/libkv)
+[![GoDoc](https://godoc.org/github.com/huangjunwen/libkv?status.png)](https://godoc.org/github.com/huangjunwen/libkv)
 
 `libkv` provides a `Go` native library to store metadata using Distributed Key/Value stores (or common databases).
 

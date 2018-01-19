@@ -3,9 +3,9 @@ package redis
 import (
 	"testing"
 
-	"github.com/docker/libkv"
-	"github.com/docker/libkv/store"
-	"github.com/docker/libkv/testutils"
+	"github.com/huangjunwen/libkv"
+	"github.com/huangjunwen/libkv/store"
+	"github.com/huangjunwen/libkv/testutils"
 	"github.com/stretchr/testify/assert"
 )
 
