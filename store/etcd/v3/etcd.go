@@ -249,7 +249,7 @@ func (s *EtcdV3) WatchTree(directory string, stopCh <-chan struct{}, opts *store
 
 	// Get the current value
 	rev, pairs, err := s.list(directory, opts)
-	if err != nil && err != store.ErrKeyNotFound {
+	if err != nil {
 		return nil, err
 	}
 
